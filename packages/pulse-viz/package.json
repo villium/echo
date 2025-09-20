@@ -1,0 +1,52 @@
+{
+  "name": "@villium/echo-chamber",
+  "version": "0.1.0",
+  "description": "Real-time audio visualization components for waveforms and spectrograms",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "test": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "@villium/echo": "^0.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "tsup": "^8.0.0",
+    "vitest": "^2.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "author": "Villium",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/villium/echo.git",
+    "directory": "packages/pulse-viz"
+  },
+  "keywords": [
+    "audio",
+    "visualization",
+    "waveform",
+    "spectrogram",
+    "canvas",
+    "real-time"
+  ]
+}
